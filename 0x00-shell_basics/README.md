@@ -1,0 +1,1 @@
+In this directory you will find several scripts that will perform different functions which will be explained as we go along
