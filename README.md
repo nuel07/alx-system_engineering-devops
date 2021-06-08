@@ -1,0 +1,1 @@
+This repository contains shell scripts intended to acquaint me with shell scripting knowledge
