@@ -1,2 +1,3 @@
 #!/bin/bash
-echo "HWello world"
+echo $(pwd -P)
+
