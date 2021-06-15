@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(behlnort#$($(water#$STIR)+$WATER))
+echo (($STIR+$WATER))
