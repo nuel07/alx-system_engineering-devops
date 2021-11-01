@@ -1,0 +1,1 @@
+In this directory focus is on how to create ssh keys, how to use loops, conditions and handle files using shell scripts.
