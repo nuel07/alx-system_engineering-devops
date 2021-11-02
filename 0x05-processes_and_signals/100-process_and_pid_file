@@ -6,10 +6,10 @@
 #    Deletes the file /var/run/myscript.pid and terminates itself when
 #    receiving a SIGQUIT or SIGTERM signal
 
-file=echo "$$" > /var/run/holbertonscript.pid
+echo "$$" > /var/run/holbertonscript.pid
 
 del_file(){
-    rm "$file"
+    rm /var/run/myscript.pid
     exit
 }
 while true; do
