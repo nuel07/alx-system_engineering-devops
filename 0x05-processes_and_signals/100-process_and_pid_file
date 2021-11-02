@@ -6,16 +6,18 @@
 #    Deletes the file /var/run/myscript.pid and terminates itself when
 #    receiving a SIGQUIT or SIGTERM signal
 
-echo "$$" > /var/run/holbertonscript.pid
-
-del_file(){
-    rm /var/run/myscript.pid
-    exit
+del_file() {
+  rm /var/run/holbertonscript.pid
+  exit
 }
-while true
+
+echo "$$" > /var/run/holbertonscript.pid
+i=0;
+while [ $1 -lt 10 ];
 do
-        echo "To infinity and beyond"
-        trap 'echo "I hate the kill command" -a del_file' SIGTERM
-        trap 'echo "Y u no love me?!"' SIGINT
-        trap 'del_file' SIGQUIT
+  echo "To infinity and beyond"
+  sleep 2
+  trap 'echo "Y U no love me?!"' SIGINT
+  trap 'echo "I hate the kill command" && del_file' SIGTERM
+  trap 'del_file' SIGQUIT
 done
