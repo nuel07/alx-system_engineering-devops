@@ -7,13 +7,13 @@
 #    receiving a SIGQUIT or SIGTERM signal
 
 del_file() {
-  rm /var/run/holbertonscript.pid
+  rm /var/run/myscript.pid
   exit
 }
 
-echo "$$" > /var/run/holbertonscript.pid
+echo "$$" > /var/run/myscript.pid
 i=0;
-while [ $1 -lt 10 ];
+while [ $i -lt 10 ];
 do
   echo "To infinity and beyond"
   sleep 2
