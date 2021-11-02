@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# displays "To infinity and beyond" indefinitely with a sleep 2
+#+ in between each iteration and "I am invincible!!!" when receiving
+# a SIGTERM signal
+
+i=0;
+while [ $i -lt 10 ]; do
+        echo "To infinity and beyond"
+        sleep 2
+        trap "I am invincible!!!" TERM
+done
+
+exit 0
