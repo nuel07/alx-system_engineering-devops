@@ -12,11 +12,10 @@ del_file(){
     rm /var/run/myscript.pid
     exit
 }
-while true; do
+while true
+do
         echo "To infinity and beyond"
-        trap 'echo "I hate the kill command"' SIGTERM
+        trap 'echo "I hate the kill command" -a del_file' SIGTERM
         trap 'echo "Y u no love me?!"' SIGINT
-        trap 'del_file' SIGQUIT SIGTERM
+        trap 'del_file' SIGQUIT
 done
-
-exit 0
