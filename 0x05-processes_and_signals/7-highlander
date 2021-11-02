@@ -7,7 +7,7 @@ i=0;
 while [ $i -lt 10 ]; do
         echo "To infinity and beyond"
         sleep 2
-        trap 'echo "I am invincible!!!"' TERM
+        trap 'echo "I am invincible!!!"' SIGTERM
 done
 
 exit 0
