@@ -12,8 +12,7 @@ while true; do
         echo "To infinity and beyond"
         trap 'echo "I hate the kill command"' SIGTERM
         trap 'echo "Y u no love me?!"' SIGINT
-        trap 'rm -f "$file"' SIGQUIT
-        trap 'rm -f "$file"' SIGTERM
+        trap 'rm -f "$file"' SIGQUIT SIGTERM
 done
 
 exit 0
