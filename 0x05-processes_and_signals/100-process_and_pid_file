@@ -7,12 +7,15 @@
 #    receiving a SIGQUIT or SIGTERM signal
 
 file=$(/var/run/myscript.pid)
-
+del_file(){
+    rm $file
+    exit
+}
 while true; do
         echo "To infinity and beyond"
         trap 'echo "I hate the kill command"' SIGTERM
         trap 'echo "Y u no love me?!"' SIGINT
-        trap 'rm -f "$file"' SIGQUIT SIGTERM
+        trap 'del_file' SIGQUIT SIGTERM
 done
 
 exit 0
