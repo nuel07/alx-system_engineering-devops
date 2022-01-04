@@ -1,0 +1,1 @@
+In this project directory, i learnt about the secure shell protocol(SSH) and it is used in server management.
