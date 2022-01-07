@@ -1,0 +1,1 @@
+Web server management and usability using Nginx are the main key areas of focus in this project.
