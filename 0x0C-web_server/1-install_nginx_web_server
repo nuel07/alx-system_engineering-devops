@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# installs Nginx on my server
+#+ listens on port 80
+#+  return a page that contains the string Hello World!
+#++ When querying Nginx at its root / with a GET request
+sudo apt-get update -y
+sudo apt-get install -y nginx
+mkdir /etc/nginx/html
+touch /etc/nginx/html/index.html
+echo "Hello World" > /etc/nginx/html/index.html
+printf %s "Server {
+       listen 80 default_server;
+       listen [::]:80 default_server;
+       root /etc/nginx/html;
+       index index.html index.htm;
+}
+" > /etc/nginx/sites_available/default
+service nginx restart
