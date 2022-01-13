@@ -1,0 +1,1 @@
+More emphasis on server debugging specificallyl nginx.
