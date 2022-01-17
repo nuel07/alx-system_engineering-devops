@@ -2,31 +2,32 @@
 # Configure Nginx so that its HTTP response contains a custom header (on web-01 and web-02)
 # The name of the custom HTTP header must be X-Served-By
 # The value of the custom HTTP header must be the hostname of the server Nginx is running on
-sudo apt-get update -y
+sudo apt-get update
 sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
-sudo mkdir -p /var/www/html
+sudo mkdir -p /var/www/html /var/www/error
 sudo chmod -R 755 /var/www
-echo "Hello World!" > /var/www/html/index.html
-touch /var/www/html/404.html
+echo 'Hello World!' > /var/www/html/index.html
 echo "Ceci n'est pas une page" > /var/www/html/404.html
+server_config=\
+"server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+	root /var/www/html;
+	index index.html index.htm index.nginx-debian.html;
+	server_name _;
+	add_header X-Served-By \$hostname;
+	location / {
+		 try_files \$uri \$uri/ =404;
+		 }
+		 if (\$request_filename ~ redirect_me){
+		    rewrite ^ https://sketchfab.com/bluepeno/models permanent;
+		    }
+		    error_page 404 /404.html;
+		    location = /404.html {
+		    	     internal;
+			     }
+}"
 
-printf %s "server {
-       listen 80 default_server;
-       listen[::]:80 default_server;
-       add_header X-Served-By $HOSTNAME;
-       root /var/www/html;
-       index index.html index.htm index.nginx-debian.html;
-       
-       location /redirect_me {
-       		return 301 https://www.nba.com/;
-       }
-       
-       error_page 404 /404.html;
-       location /404 {
-       		root /var/www/html;
-		internal;
-       }
-}" > /etc/nginx/sites-available/default
-
-service nginx restart
+echo "$server_config" > /etc/nginx/sites-enabled/default
+sudo service nginx restart
