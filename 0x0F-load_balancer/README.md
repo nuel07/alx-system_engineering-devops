@@ -1,0 +1,1 @@
+An introduction to load balancing software. I learnt to use a load balancer on my web servers, specifically HAProxy load balancer.
