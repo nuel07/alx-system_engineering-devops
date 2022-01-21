@@ -13,8 +13,8 @@ frontend nuel07
         default_backend nuel07
 backend nuel07
         balance roundrobin
-        server 380-web-01 3.239.76.17:80 check
-        server 380-web-02 34.229.62.150:80 check
+        server 368-web-01 3.239.76.17:80 check
+        server 368-web-02 34.229.62.150:80 check
 "
 echo "$server_config" >> /etc/haproxy/haproxy.cfg
 
