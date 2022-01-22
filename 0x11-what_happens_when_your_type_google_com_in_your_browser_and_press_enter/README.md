@@ -1,0 +1,1 @@
+In this project, I wrote an article explaining what happens when a user types https://www.google.com and presses Enter. I explain what happpens behind the scenes and how the network and the servers all work together to provide content to the user.
