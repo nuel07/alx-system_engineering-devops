@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# configure server to deny all incoming traffic except on port 22(SSH),
+#+ port 80(HTTP) and port 443(HTTPS)
+sudo apt update
+sudo apt install ufw
+sudo ufw enable
+sudo ufw default allow outgoing
+sudo ufw default deny incoming
+sudo ufw allow ssh
+sudo ufw allow http
+sudo ufw allow https
+sudo ufw disable
