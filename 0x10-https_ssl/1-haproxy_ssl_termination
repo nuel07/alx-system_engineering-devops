@@ -41,18 +41,14 @@ defaults
 frontend nuel07                                                                                                                      
         bind *:80                                                                                                                    
         mode http                                                                                                                    
-        reqadd X-Forwarded-Proto:\ http                                                                                              
+        http-request add-header X-Forwarded-Proto http if !{ ssl_fc }                                                               
         default_backend nuel07                                                                                                       
 frontend www-https                                                                                                                   
         bind *:443 ssl crt /etc/haproxy/certs/www.korp.tech.pem                                                                      
-        reqad X-Forwarded-Proto:\ https                                                                                              
-        acl letsencrypt-alc path_beg /.well-known/acme-challenge/                                                                    
-        use-backend letsencrypt-backend if letsencrypt-acl                                                                           
-        default_backend nuel07                                                                                                       
+        http-request add-header X-Forwarded-Proto https if !{ ssl_fc }
+        default_backend nuel07                                                                      
 backend nuel07                                                                                                                       
-        redirect scheme https if !{ ssl_fc }                                                                                         
+        redirect scheme https if !{ ssl_fc }                                                   
         balance roundrobin                                                                                                           
         server 368-web-01 3.239.76.17:80 check                                                                                       
         server 368-web-02 34.229.62.150:80 check                                                                                     
-backend letsencrypt-backend                                                                                                          
-        server letsencrypt 127.0.0.1:54321
