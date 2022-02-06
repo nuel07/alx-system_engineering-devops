@@ -13,6 +13,6 @@ if __name__ == "__main__":
                 "username": u.get("username"),
                 "task": td.get("title"),
                 "completed": td.get("completed")
-            } for td in requests.get(url + "todos",
-                                    params={"userId": u.get("id")}).json()]
+            } for td in requests.get(url + "todos", params={"userId":
+                                                            u.get("id")}).json()]
             for u in users}, jsonfile)
