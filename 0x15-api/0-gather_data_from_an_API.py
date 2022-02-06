@@ -10,7 +10,7 @@ if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/"
     user = requests.get(url + "users/{}".format(user_id)).json()
     todos = requests.get(url + 'todos', params={"userId":user_id}).json()
-    complete = [tsk.get("title") for tsk in tdlst if tsk.get("completed") is True]
+    complete = [tsk.get("title") for tsk in todos if tsk.get("completed") is True]
     print("Employee {} is done with tasks {}/{}".format(user.get("name"),
-                                                        len(complete), len(tdlst)))
+                                                        len(complete), len(todos)))
     [print("\t {}".format(dne)) for dne in complete]
