@@ -12,6 +12,6 @@ if __name__ == "__main__":
     todos = requests.get(url + 'todos', params={"userId": user_id}).json()
     complete = [tsk.get("title") for tsk in todos
                 if tsk.get("completed") is True]
-    print("Employee {} is done with tasks {}/{}"
+    print("Employee {} is done with tasks {}/{}:"
           .format(user.get("name"), len(complete), len(todos)))
-    [print("\t{}".format(dne)) for dne in complete]
+    [print("\t {}".format(dne)) for dne in complete]
