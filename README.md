@@ -1,6 +1,3 @@
-
-System Engineering and DevOps - Bash, Scripting, Web Stack/Web Stack Debugging, Networking & Security, CI/CD
-
 This repository contains programs written for the system engineering and DevOps track during the software engineering program
 at ALX-Africa. In these projects, I worked with Bash and practiced writing Bash scripts to automate tasks. I learned about
 the OSI model and various Linux networking tools. Further, I configured a distributed system - two web servers and one
@@ -30,8 +27,7 @@ The project directories are as follows:
     0x15. API
     0x16. API advanced
     0x17. Web stack debugging #3
-    0x18. Webstack monitoring
-
+   
 Author ✒️
 
     Promise Yehangane<nuel07> <yehanganep@gmail.com>
