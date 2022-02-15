@@ -1,0 +1,1 @@
+Another chance to learn about debugging, and automation using puppet.
