@@ -23,7 +23,7 @@ The project directories are as follows:
     0x0D. Configuration management
     0x0E. Web stack debugging #1
     0x10. HTTPS SSL
-    0x11. What happens when you type holbertonschool.com in your browser and press Enter
+    0x11. What happens when you type google.com in your browser and press Enter
     0x12. Web stack debugging #2
     0x13. Firewall
     0x14. Mysql
@@ -34,4 +34,4 @@ The project directories are as follows:
 
 Author ✒️
 
-    BPromise Yehangane<bnuel07> <yehanganep@gmail.com>
+    Promise Yehangane<nuel07> <yehanganep@gmail.com>
