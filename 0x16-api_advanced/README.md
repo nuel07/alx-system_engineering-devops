@@ -1,0 +1,1 @@
+I learnt how to retrieve endpoints from API documentation and continued to learn more about API's.
