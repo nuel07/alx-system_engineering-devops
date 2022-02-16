@@ -16,17 +16,18 @@ The project directories are as follows:
     0x09. Web infrastructure design
     0x0A. SSH
     0x0B. Web server
-    0x0C. Web stack debugging #0
+    0x0C. Web stack debugging_0
     0x0D. Configuration management
-    0x0E. Web stack debugging #1
+    0x0E. Web stack debugging_1
     0x10. HTTPS SSL
     0x11. What happens when you type google.com in your browser and press Enter
-    0x12. Web stack debugging #2
+    0x12. Web stack debugging_2
     0x13. Firewall
     0x14. Mysql
     0x15. API
     0x16. API advanced
-    0x17. Web stack debugging #3
+    0x17. Web stack debugging_3
+    0x18-webstack_monitoring
    
 Author ✒️
 
