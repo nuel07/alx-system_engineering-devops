@@ -1,0 +1,1 @@
+I learnt about webstack monitoring in this project. I learnt about access logs, error logs and how to use datadog.
