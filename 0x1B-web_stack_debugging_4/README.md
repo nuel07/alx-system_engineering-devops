@@ -1,0 +1,1 @@
+In this project, i continued to develop my debugging skills by attempting to solve another server bug.
