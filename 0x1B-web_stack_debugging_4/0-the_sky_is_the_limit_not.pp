@@ -1,7 +1,13 @@
 # increase traffic handling capacity of Nginx
 
-exec {'extend limit':
-     onlyif => 'test -e /etc/default/nginx',
-     command => 'sudo sed -i "s/15/4096/" /etc/default/nginx/: sudo service nginx restart',
-     provider => shell,
+exec { 'change nginx ulimit':
+command  => 'echo ULIMIT="-n 2000" > /etc/default/nginx',
+path     => '/usr/bin',
+provider => 'shell'
+}
+
+exec { 'restart nginx':
+command  => 'service nginx restart',
+path     => '/usr/bin',
+provider => 'shell'
 }
